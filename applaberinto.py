@@ -40,13 +40,13 @@ solve_button = st.sidebar.button("Resolver Laberinto")
 
 render_maze(MAZE)
 
-
 if solve_button:
     if algorithm == "BFS":
         path = solve_maze_bfs(MAZE, START, END)
         if path:
-           st.success(f"¡Camino encontrado con {algorithm}!")
-           render_maze(MAZE, path)
+            st.success(f"¡Camino encontrado con {algorithm}!")
+            st.info(f"Casillas recorridas: {len(path)}")
+            render_maze(MAZE, path)
         else:
             st.error("No se encontró un camino.")
     else:
