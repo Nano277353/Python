@@ -93,9 +93,9 @@ def solve_astar(maze, start, end):
         dc = end[1] - c
         penalty = 0
         if dr < 0:
-            penalty += abs(dr) * 2
+            penalty += abs(dr) * 15
         if dc < 0:
-            penalty += abs(dc) * 2
+            penalty += abs(dc) * 15
         return abs(dr) + abs(dc) + penalty
 
     heap = [(heuristic(*start), 0, start, [start])]
